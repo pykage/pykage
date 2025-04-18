@@ -153,7 +153,6 @@ class Package:
         if self._loc.get_type() == "source":
             click.secho("install from url source : %s" % self)
             print(click.style("fetching data...", fg="cyan"), end=" ")
-            time.sleep(random.randint(1, 5))
             click.secho("OK", fg="green")
             print(click.style("installing package...", fg="cyan"), end=" ")
             sh.python3("-m",  "pip", "install", "--index-url",  self._loc.get_url_source(), "--src", dest)
